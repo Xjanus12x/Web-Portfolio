@@ -18,9 +18,16 @@
 }
 
 .visit--button {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   justify-self: center;
   padding: calc(v.$s1 - 10px) v.$s3;
+  cursor: pointer;
+
+  @include m.animate;
+  &:is(:hover, :active) {
+    background-color: darken(red, 30%);
+    color: white;
+  }
 }
 
 .submit--button {
