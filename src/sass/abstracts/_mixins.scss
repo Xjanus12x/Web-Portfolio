@@ -1,0 +1,36 @@
+@mixin margin-inline-auto {
+  margin-inline: auto;
+}
+
+@mixin d-grid {
+  display: grid;
+}
+
+@mixin d-flex {
+  display: flex;
+}
+
+@mixin d-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin j-center {
+  justify-content: center;
+}
+
+@mixin f-start {
+  justify-self: flex-start;
+}
+
+@mixin animate {
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin custom-padding($top, $bot, $left, $right) {
+  padding: $top $bot $left $right;
+}
+
+@mixin semi-custom-padding($top-bot, $left-right) {
+  padding: $top-bot $left-right;
+}

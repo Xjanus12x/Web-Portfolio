@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as v;
+@use "../base/typography" as t;
+.skills {
+  background-color: map-get(v.$colors, "800");
+  display: flex;
+  gap: v.$g2;
+  justify-content: center;
+  padding-bottom: v.$p9;
+  img {
+    height: auto;
+    max-width: 4%;
+    transition: transform 0.5s ease;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+}

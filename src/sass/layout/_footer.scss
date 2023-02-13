@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../base/typography" as t;
+footer {
+  padding: v.$p5;
+  font-family: t.$ff2;
+  display: grid;
+  place-items: center;
+  color: map-get(v.$colors, "100");
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: v.$g1;
+
+ 
+    .logo-container:hover a img {
+      transition: transform 0.5s ease-in-out;
+      transform: translateY(-.5rem)
+    }
+
+    .secondary-navigation {
+      display: flex;
+      gap: v.$g2;
+    }
+    .socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: v.$g2;
+      li {
+        a {
+          img {
+            height: auto;
+            width: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

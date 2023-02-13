@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../base/typography" as t;
+
+.hero {
+  $hero: &;
+  @include m.d-grid;
+  place-items: center left;
+
+  #{$hero}__container {
+
+    @include m.semi-custom-padding(20em, 10em);
+    @include m.d-grid;
+    gap: v.$g2;
+    line-height: 1.2;
+
+    color: map-get(v.$colors, "100");
+    font-family: t.$ff2;
+    @include m.d-column;
+    #{$hero}__name {
+      font-size: v.$s6;
+    }
+    #{$hero}__description {
+      letter-spacing: 0.1em;
+      width: 54ch;
+      line-height: 1.5;
+    }
+  }
+}

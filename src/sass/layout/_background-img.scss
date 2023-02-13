@@ -1,0 +1,49 @@
+@use "../base/typography" as t;
+@use "../abstracts/variables" as v;
+.bg-wrapper {
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
+  background-blend-mode: multiply;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../../assets/Backgrounds/bg-img.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.spacer {
+  aspect-ratio: 960/200;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+
+  font-family: t.$ff2;
+  font-size: v.$s2;
+  color: white;
+}
+
+.spacer2 {
+  aspect-ratio: 900/100;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+}
+.layer1 {
+  background-image: url("../../assets/Backgrounds/stacked-waves-haikei.svg");
+}
+
+.layer2 {
+  background-image: url("../../assets/Backgrounds/stacked-waves-haikei2.svg");
+}
+
+.layer3 {
+  background-image: url("../../assets/Backgrounds/wave-haikei3.svg");
+}

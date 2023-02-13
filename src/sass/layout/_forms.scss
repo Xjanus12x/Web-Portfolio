@@ -1,0 +1,87 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../base/typography" as t;
+
+.getInTouch {
+  display: flex;
+  justify-content: space-around;
+  @include m.semi-custom-padding(10em, 10em);
+  position: relative;
+  z-index: 2;
+  font-family: t.$ff;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../assets/Backgrounds/low-poly-grid-haikei.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
+  }
+}
+.information {
+  $paragraphWidth: 60ch;
+  text-align: left;
+
+  & div {
+    display: grid;
+    gap: v.$g1;
+  }
+
+  & h2 {
+    font-size: v.$s4;
+  }
+
+  & :last-child {
+    max-width: $paragraphWidth;
+  }
+
+  & p span {
+    color: map-get(v.$colors, "400");
+  }
+}
+
+.forms {
+  $topBotPadding: 1em;
+  $leftRightPadding: 1em;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+  text-align: left;
+
+  & :is(input, button) {
+    @include m.semi-custom-padding($topBotPadding, $leftRightPadding);
+  }
+
+  & > * {
+    border-radius: 4px;
+  }
+
+  & input {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  & textarea {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &
+    :where(
+      :first-child,
+      :nth-child(4),
+      :nth-child(5),
+      :nth-child(6),
+      :nth-child(7),
+      :nth-child(8)
+    ) {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+.button {
+  border-radius: 10px;
+  padding: v.$p1 v.$p3;
+  cursor: pointer;
+  border: 5px solid black;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  box-shadow: 10px 10px 19px 3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 19px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 19px 3px rgba(0, 0, 0, 0.75);
+
+  @include m.animate;
+  &:is(:hover, :active) {
+    background-color: darken(red, 30%);
+    color: white;
+  }
+}
+
+.visit--button {
+  border-radius: .5rem;
+  justify-self: center;
+  padding: calc(v.$s1 - 10px) v.$s3;
+}
+
+.submit--button {
+  @include m.animate;
+  &:is(:hover, :active) {
+    background-color: darken(red, 30%);
+    color: white;
+  }
+}

@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../base/typography" as t;
+header {
+  display: grid;
+  place-items: center;
+
+  .nav {
+    top: 0;
+    color: map-get(v.$colors, "100");
+    position: fixed;
+    z-index: 99999;
+    min-width: 70%;
+    clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
+
+    background: rgba(127, 178, 218, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    &__menu {
+      padding: v.$p2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: v.$g3;
+      font-family: t.$ff2;
+
+      li {
+        transition: transform 0.3s ease;
+        &:hover {
+          transform: scale(1.5);
+        }
+      }
+
+      li:nth-child(2) {
+        a {
+          img {
+            justify-self: flex-start;
+            display: block;
+            height: auto;
+            width: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
